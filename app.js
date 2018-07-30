@@ -21,9 +21,9 @@ app.use('/*',function(req, res, next) {
 });
 
 mongoose.Promise = global.Promise;
-mongoose.connect(process.env.MONGODB_URI ||  "mongodb://localhost:27018/todo_db", { useNewUrlParser: true }, function (err){
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27018/todo_db", { useNewUrlParser: true }, function (err){
   if (err){
-    console.log('mongo connection failed!');
+    console.log(process.env.MONGODB_URI);
   }
 });
 
