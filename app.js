@@ -27,8 +27,6 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27018/todo_db",
   }
 });
 
-app.set('port', (process.env.PORT || 5000));
-
 // view engine setup
 
 app.set('views', path.join(__dirname, 'views'));
@@ -59,9 +57,6 @@ app.use(function(err, req, res, next) {
   // render the error page
   res.status(err.status || 500);
   res.render('error');
-});
-app.listen(app.get('port'), function() {
-    console.log('App is running, server is listening on port ', app.get('port'));
 });
 
 module.exports = app;
